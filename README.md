@@ -7,7 +7,7 @@ to a format that can be imported to
 ### Converting your logins
 1. Open up Force.com LOGINS and go to the export page and copy the XML
 2. Open up the broswer javascript console. (right click on your current webpage, choose inspect, click console tab)
-3. Create a new variable named xml and paste the XML as the value of the variable. `var xmlString = '<root><groups>foo</groups><accounts>bar</accounts></root>'`
+3. Create a new variable named xml and paste the XML as the value of the variable. EXAMPLE (use the XML from your plugin): `var xmlString = '<root><groups>foo</groups><accounts>bar</accounts></root>'`
 4. Paste the javascript into the console and press enter
 5. run `reduceLogins(xmlString)`.
 
