@@ -1,15 +1,19 @@
 # Conversion from Force.com LOGINS to ORGanizer
-This script allows converting exported XML from force.com LOGINS to a format that can be imported to ORGanizer.
+This script allows converting exported XML from 
+[force.com LOGINS](https://chrome.google.com/webstore/detail/forcecom-logins/ldjbglicecgnpkpdhpbogkednmmbebec?hl=en)
+to a format that can be imported to 
+[ORGanizer](https://chrome.google.com/webstore/detail/organizer-for-salesforce/lojdmgdchjcfnmkmodggbaafecagllnh?hl=en).
 
-To run, open up Force.com LOGINS and go to the export page and copy the XML.
+### Converting your logins
+1. Open up Force.com LOGINS and go to the export page and copy the XML
+2. Open up the broswer javascript console. (right click on your current webpage, choose inspect, click console tab)
+3. Create a new variable named xml and paste the XML as the value of the variable. `var xmlString = '<root><groups>foo</groups><accounts>bar</accounts></root>'`
+4. Paste the javascript into the console and press enter
+5. run `reduceLogins(xmlString)`.
 
-Open up the broswer javascript console. (right click, choose inspect, click console tab)
+This will print a JSON string you can copy and paste into a text editor and save as a `.json` file and import into the ORGanizer import page (right click on extension icon and choose options).
 
-Create a new variable named xml and paste the XML as the value of the variable.
-
-`var xmlString = '<>pase XML here<>'`
-
-Paste the javascript into the console. and run `reduceLogins(xmlString)`. This will print a JSON string you can copy and paste into a text editor and save as a `.json` file and import into the ORGanizer import page (right click on extension icon and choose options).
+**note:** Make sure to remove the outer `"` from the printed JSON when saving as a file.
 
 ### Script to paste into browser console
 
