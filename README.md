@@ -7,7 +7,9 @@ to a format that can be imported to
 ### Converting your logins
 1. Open up Force.com LOGINS and go to the export page and copy the XML
 2. Open up the broswer javascript console. (right click on your current webpage, choose inspect, click console tab)
-3. Create a new variable named xml and paste the XML as the value of the variable. EXAMPLE (use the XML from your plugin): `var xmlString = '<root><groups>foo</groups><accounts>bar</accounts></root>'`
+3. Create a new variable named xml and paste the XML as the value of the variable.
+  - **NOTE** Use backtick (shred on ~ key) because the XML is a multilines string with linebreaks.
+  - (use the XML from your plugin): `var xmlString = \`<root><groups>foo</groups><accounts>bar</accounts></root>\``
 4. Paste the javascript into the console and press enter
 5. run `reduceLogins(xmlString)`.
 
@@ -54,7 +56,7 @@ function xmlToJson(xml) {
 }
 
 function reduceLogins(xmlString) {
-  var xmlDOM = new DOMParser().parseFromString(xml, 'text/xml');
+  var xmlDOM = new DOMParser().parseFromString(xmlString, 'text/xml');
   const logins = xmlToJson(xmlDOM);
   const groupMap = logins.root.groups.group.reduce((acc, curr) => {
     const item = curr['@attributes'];
